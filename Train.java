@@ -1,4 +1,5 @@
 
+
 import java.io.*;
 
 
@@ -20,6 +21,11 @@ public class Train extends Ticket {
         this.Destination = Destination;
         this.Origin = Origin;
         this.ModeOfTransport = ModeofTransport;
+    }
+    void print()
+    {
+    	System.out.print("TRAIN TICKET");
+    	super.print();
     }
 
     void add() throws FileNotFoundException {

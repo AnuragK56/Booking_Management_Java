@@ -11,12 +11,13 @@ import display.*;
  */
 
 class add {
+	
     Scanner sc = new Scanner(System.in);
 
     void addTicket() throws FileNotFoundException {
         System.out.print("\nEnter Passenger Name: ");
         String name = sc.next();
-        System.out.print("\nEnter Date of Journey: ");
+        System.out.print("\nEnter Date of Journey(dd/mm/yyyy): ");
         String Date = sc.next();
         System.out.print("\nEnter Mode of Transport: ");
         String ModeofTransport = sc.next();
@@ -33,33 +34,43 @@ class add {
             if ((ModeofTransport.toLowerCase()).equals("train")) {
                 Train t = new Train(name, Date, ModeofTransport, fname, PNR, origin, Destination);
                 t.add();
+                t.print();
             } else {
                 Flight f = new Flight(name, Date, ModeofTransport, fname, PNR, origin, Destination);
                 f.add();
+                f.print();
             }
         } catch (IOException E) {
-            System.out.println("EROOR");
+            System.out.println("ERROR");
         }
     }
 
 }
 
-class Main {
+class Main implements Runnable {
     static Scanner sc = new Scanner(System.in);
-
+    static int count=1;
     public int Menu() {
-
-        System.out.println("\n\n ########### Welcome to Booking Management System ###########\n");
-        System.out.println("Choose any one of the following action\n");
+    	if(count==1)
+    		{for(int i=0;i<50;i++)
+    			   System.out.print("#");
+    
+        System.out.print("  Welcome to Booking Management System ");
+        for(int i=0;i<50;i++)
+ 		   System.out.print("#");
+    		}
+        System.out.println("\n\nChoose any one of the following action\n");
         System.out.println("1) Add a New Ticket");
         System.out.println("2) Display Tickets of a Particular Customers");
         System.out.println("3) Display Tickets of All Customers");
         System.out.println("4) Exit\n");
         int choice = sc.nextInt();
+        count--;
         return choice;
     }
 
-    public static void main(String args[]) throws FileNotFoundException {
+    public void run(){
+    	try {
         Main m = new Main();
         int choice = 0;
 
@@ -75,17 +86,21 @@ class Main {
             case 2:
                 System.out.println("Enter the name of Customer:");
                 String name = sc.next();
-                System.out.println("All Booking of " + name + " are :");
                 d.displayParticular(name);
                 break;
             case 3:
                 System.out.println("The details of all Booking are :");
                 d.displayAll();
                 break;
-            case 4:
+            case 4:d.endStatement();
                 return;
             }
         } while (choice != 4);
+    	}
+    	  catch (Exception e) 
+            { 
+                System.out.println ("Exception is caught"); 
+            } 
 
     }
 }

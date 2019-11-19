@@ -20,7 +20,11 @@ public class Flight extends Ticket {
         this.Origin = Origin;
         this.ModeOfTransport = ModeofTransport;
     }
-
+    void print()
+    {
+    	System.out.print("Flight Ticket:");
+    	super.print();
+    }
     void add() throws FileNotFoundException {
         try {
             File f = new File("C:\\Users\\anura\\Documents\\Booking Management\\src\\data.csv");

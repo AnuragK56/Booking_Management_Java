@@ -1,6 +1,10 @@
 Name,Date,ModeofTransport,TranportName,PNR,Origin,Destination
-Anurag,18Dec,Train,Rajdhani,121312,Mumbai,Jaipur
-Akshay,17dec,Flight,GO Air,A32712,Ranchi,Delhi
-Djay,15Dec,Flight,AirAsia,AADSSA,Kolkata,Delhi
-Djay,14,Flight,Train,DAKSDA,Kolkata,Jaipur
-Anurag,18Dec,Flight,AirIndia,ASD13121,Jaipur,Mumbai
+Anurag,18/12/2019,Train,Rajdhani,121312,Mumbai,Jaipur
+Akshay,17/12/2019,Flight,GO Air,A32712,Ranchi,Delhi
+Djay,15/12/2019,Flight,AirAsia,AADSSA,Kolkata,Delhi
+Djay,14/12/2019,Flight,Train,DAKSDA,Kolkata,Jaipur
+Anurag,18/12/2019,Flight,AirIndia,ASD13121,Jaipur,Mumbai
+Anurag,19/11/2019,Train,AirIndia,asdad123,Goa,Mumbai
+Madhav,13/12/2019,Train,DoubleDecker,ASDJ1231,Delhi,jAIPUR
+Saket,15/12/2019,Train,DOubleDecker,SADAD213,Delhi,jAIPUR
+Som,12/12/2019,Flight,SpiceJet,ASDADAW,Mumbai,Pune
