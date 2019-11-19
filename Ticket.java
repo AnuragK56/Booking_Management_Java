@@ -1,7 +1,7 @@
 
 public abstract class Ticket {
     String Date;
-    int PNR;
+    String PNR;
     String Transportname;
     String Destination;
     String Origin;

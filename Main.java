@@ -9,7 +9,12 @@ import display.*;
  * @author Name : Anurag Kandalkar Reg no: 189302059 Name :Mrityunjoy Chowdhury
  *
  */
+class InvalidDateException extends Exception {
+    InvalidDateException(String s) {
+        super(s);
 
+    }
+}
 class add {
 	
     Scanner sc = new Scanner(System.in);
@@ -17,8 +22,16 @@ class add {
     void addTicket() throws FileNotFoundException {
         System.out.print("\nEnter Passenger Name: ");
         String name = sc.next();
-        System.out.print("\nEnter Date of Journey(dd/mm/yyyy): ");
-        String Date = sc.next();
+        String Date="NULL";
+        try {
+        	 System.out.print("\nEnter Date of Journey(dd/mm/yyyy): ");
+             Date = sc.next();
+             if(Date.charAt(2)!='/' || Date.charAt(5)!='/')
+            	 throw new InvalidDateException("Invalid Date Exception");
+        }catch(InvalidDateException e){
+        	System.out.println(e) ;
+        }
+       
         System.out.print("\nEnter Mode of Transport: ");
         String ModeofTransport = sc.next();
         System.out.print("\n Enter Train/Flight name: ");
@@ -63,7 +76,9 @@ class Main implements Runnable {
         System.out.println("1) Add a New Ticket");
         System.out.println("2) Display Tickets of a Particular Customers");
         System.out.println("3) Display Tickets of All Customers");
-        System.out.println("4) Exit\n");
+        System.out.println("4) Display  All Tickets of Train");
+        System.out.println("5) Display All Tickets of Flight");
+        System.out.println("6) Exit\n");
         int choice = sc.nextInt();
         count--;
         return choice;
@@ -92,10 +107,16 @@ class Main implements Runnable {
                 System.out.println("The details of all Booking are :");
                 d.displayAll();
                 break;
-            case 4:d.endStatement();
+            case 4:
+                d.displayParticular("train","modeoftransport");
+                break;
+            case 5:
+                d.displayParticular("flight","modeoftransport");
+                break;
+            case 6:d.endStatement();
                 return;
             }
-        } while (choice != 4);
+        } while (choice != 6);
     	}
     	  catch (Exception e) 
             { 

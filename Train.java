@@ -4,13 +4,10 @@ import java.io.*;
 
 
 public class Train extends Ticket {
-    String Date;
+  
     String Trainname;
     String PNR;
-    String Destination;
-    String Origin;
-    String ModeOfTransport;
-    String name;
+  
     
     Train(String name, String Date, String ModeofTransport, String Trainname, String PNR, String Destination,
             String Origin) {

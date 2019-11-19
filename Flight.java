@@ -3,13 +3,8 @@ import java.io.*;
 
 
 public class Flight extends Ticket {
-    String Date;
-    String Flightname;
     String PNR;
-    String Destination;
-    String Origin;
-    String ModeOfTransport;
-
+    String Flightname;
     Flight(String name, String Date, String ModeofTransport, String Flightname, String PNR, String Destination,
             String Origin) {
         this.name = name;
@@ -22,7 +17,7 @@ public class Flight extends Ticket {
     }
     void print()
     {
-    	System.out.print("Flight Ticket:");
+    	System.out.print("FLIGHT TICKET");
     	super.print();
     }
     void add() throws FileNotFoundException {
